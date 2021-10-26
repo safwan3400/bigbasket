@@ -17,12 +17,20 @@ body {
 
 .header {
     background: var(--bg-primary);
-    position: sticky;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    transition: top .3s;
 }
 
 .header header {
     height: 4.4rem;
     padding: 0 .8rem;
+}
+
+.header header span i {
+    color: #fff;
+    font-size: 24px;
 }
 
 .header header h2 {
@@ -51,9 +59,75 @@ body {
     height: 3rem;
 }
 
+.menu a i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.topnav {
+    display: none;
+}
+
+.responsive {
+    display: block;
+    position: fixed;
+    z-index: 3;
+    overflow: hidden;
+    animation: leftslider .5s;
+    width: 100%;
+}
+
+.topnav1 {
+    background: rgba(26, 26, 26, .7);
+    width: 100%;
+}
+
+@keyframes leftslider {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.over-flow-hidden {
+    overflow: hidden;
+}
+
+#myTopnav ul {
+    list-style-type: none;
+    padding-left: 0;
+    height: 100vh;
+    width: 300px;
+}
+
+#myTopnav ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.menuhome {
+    background: var(--bg-primary);
+    height: 4.9rem;
+    padding: 0 1rem;
+}
+
+#myTopnav ul .menuhome a {
+    font-weight: bold;
+    color: #fff;
+}
+
+.menucategory, .menuoffers, .menushops {
+    border-bottom: .2px solid var(--bg-secondary);
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
 .section1 {
     background: var(--bg-body);
     padding-bottom: 1rem;
+    padding-top: 10rem;
 }
 
 .timesection {
@@ -115,7 +189,9 @@ section img {
     z-index: 1;
 }
 
-.slideitems .items .item .itemquantity {
+/* .slideitems .items .item  */
+
+.itemquantity {
     background: var(--bg-secondary);
 }
 
@@ -143,26 +219,28 @@ section img {
     color: #8f8f8f;
     font-size: 12px;
 }
-.dprice p{
+
+.dprice p {
     margin: 0;
 }
-.bbstarprice{
+
+.bbstarprice {
     border-radius: 74px;
     margin-top: 2px;
-    border: .5px dashed rgba(74,74,74,.5);
+    border: .5px dashed rgba(74, 74, 74, .5);
     font-size: 10px;
     width: max-content;
 }
-.bbstarprice img{
+
+.bbstarprice img {
     width: 12px;
     height: 12px;
     margin-left: 2px;
     margin-right: 2px;
 }
 
-.bbstarprice .price{
+.bbstarprice .price {
     font-weight: 600;
-
 }
 
 .imgstar {
@@ -201,8 +279,10 @@ section img {
     width: 114px;
     height: 205px;
 }
+
 .bgmasalanspices {
-    background-image: url("https://www.bigbasket.com/media/uploads/section_item/images/hdpi/hp_fomATC_m_masala_spices_540_251021.jpg");    background-size: contain;
+    background-image: url("https://www.bigbasket.com/media/uploads/section_item/images/hdpi/hp_fomATC_m_masala_spices_540_251021.jpg");
+    background-size: contain;
     width: 114px;
     height: 205px;
 }
@@ -211,12 +291,12 @@ section img {
     border-radius: 4px;
     border-style: solid;
     border-width: .5px;
-    padding:auto;
+    padding: auto;
     background-image: linear-gradient( 0deg, #fff, #e2edd9), linear-gradient( 0deg, #7dbe43, #689f38);
     font-size: 10px;
-    
 }
-.marker{
+
+.marker {
     z-index: 1;
     position: absolute;
     bottom: 10px;
@@ -226,13 +306,15 @@ section img {
     height: 14px;
     width: 14px;
 }
-.marker div{
+
+.marker div {
     background-color: #62a154;
     border-radius: 50%;
     height: 7px;
     width: 7px;
 }
-.itemoffer{
+
+.itemoffer {
     height: 17px;
     font-size: 10px;
     position: absolute;
@@ -245,7 +327,7 @@ section img {
     font-weight: 700;
 }
 
-.rating span:first-child{
+.rating span:first-child {
     font-size: 10px;
     color: rgb(104, 159, 56);
     background-color: rgb(227, 235, 218);
@@ -254,7 +336,112 @@ section img {
     line-height: 12px;
     border-radius: 41px;
 }
-.rating span{
-    font-size: 10px;
 
+.rating span {
+    font-size: 10px;
+}
+
+.columnitem {
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.columnitem button {
+    width: 142px;
+}
+
+.columnitem a img {
+    width: 142px;
+    border-radius: 8px;
+    border: 1px solid #eeeff1;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+}
+
+.columnitemname {
+    margin: 0 1rem 1rem 1rem;
+}
+
+.columnitemname a span {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #9393a0;
+}
+
+.columnitemname a {
+    text-decoration: none;
+}
+
+.itemlistx {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+}
+
+.folkstext {
+    background: var(--bg-body);
+}
+
+.apps {
+    background-image: linear-gradient( 90deg, #536976 0, #292e49 97%);
+}
+
+.footbar {
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+    transition: bottom .3s;
+}
+
+.socialmedia {
+    background-image: linear-gradient( 0deg, #e6e6e6, #f3f3f3);
+}
+
+.footertags {
+    border-bottom: 1px solid #eee;
+}
+
+.footertags a {
+    text-decoration: none;
+    margin-right: 2px;
+    color: #8f8f8f; 
+    border-right: 1px solid #b9afaf;
+    display: inline-flex;
+    align-items: center;
+}
+.footertags a:last-child{
+    border-right: none;
+      
+}
+
+.footertags span {
+    font-size: 12px;
+    
+    font-weight: 700;
+    padding-right: 1px;
+
+}
+
+.footertags h5 {
+    font-size: 0.83em;
+    margin: 8px 0 0;
+}
+.footertext h2{
+    font-size: 1.2rem;
+}
+.footertext p{
+    font-size: .9rem;
+}
+.footertext li{
+    font-size: .9rem;
+}
+
+
+b a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+footer{
+    background: #4a4a4a;
+    font-size: 3vw;
+    color: #fff;
 }
